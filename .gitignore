@@ -1,0 +1,7 @@
+PROJECT.md
+
+venv
+__pycache__/
+
+downloads/LibriTTS
+data/original/
