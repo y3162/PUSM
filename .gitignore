@@ -6,3 +6,4 @@ __pycache__/
 downloads/LibriTTS
 data/original/*/
 data/syllables/*/
+results/figures/*.png

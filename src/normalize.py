@@ -34,7 +34,7 @@ def main():
         syllables = text2syllables(text)
         output_file = output_dir / file.name.replace('.normalized.txt', '.syllables.txt')
         output_file.write_text(' '.join(syllables))
-        print(f'{i+1}/{len(all_files)}', end='\r')
+        print(f'Converting: [{i+1}/{len(all_files)}]', end='\r')
 
 if __name__ == '__main__':
     main()

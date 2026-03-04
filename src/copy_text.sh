@@ -35,4 +35,12 @@ if [[ -d "$OUTPUT_DIR" ]]; then
 fi
 
 mkdir -p "$OUTPUT_DIR"
-find "$TARGET_DIR" -name "*.normalized.txt" -exec cp -f {} "$OUTPUT_DIR" \;
+files=($(find "$TARGET_DIR" -name "*.normalized.txt"))
+total=${#files[@]}
+count=0
+
+for file in "${files[@]}"; do
+    count=$((count + 1))
+    echo -ne "Copying: [$count/$total]\r"
+    cp -f --no-preserve=mode "$file" "$OUTPUT_DIR"
+done
